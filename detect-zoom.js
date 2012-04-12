@@ -89,7 +89,7 @@ var DetectZoom = {
     var important = function(str){ return str.replace(/;/g, " !important;"); };
     
     container.setAttribute('style', important('width:0; height:0; overflow:hidden; visibility:hidden; position: absolute;'));
-    div.innerHTML = "1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>0";
+    div.innerHTML = "1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>0";
     div.setAttribute('style', important('font: 100px/1em sans-serif; -webkit-text-size-adjust: none; height: auto; width: 1em; padding: 0; overflow: visible;'));
     
     container.appendChild(div);
@@ -203,3 +203,7 @@ var DetectZoom = {
     return this.ratios().devicePxPerCssPx;
   }
 };
+
+exports.zoom= function(){
+	return DetectZoom.zoom()
+}
